@@ -12,7 +12,7 @@ class GejalaController extends Controller
 {
     public function index()
     { 
-        sleep(1);
+        // sleep(1);
         $gejalas = Gejala::orderBy('kode', 'ASC')->get();
         return GejalaResource::collection($gejalas);
     }
@@ -22,7 +22,6 @@ class GejalaController extends Controller
         return [
             'kode' => request('kode'),
             'nama' => request('nama'),
-            'bobot' => request('bobot'),
         ];
     }
 
@@ -41,7 +40,6 @@ class GejalaController extends Controller
         $gejala->update([
             'kode' => request('kode'),
             'nama' => request('nama'),
-            'bobot' => request('bobot'),
         ]);
         return response()->json(['message' => 'Gejala was updated.']);
     }

@@ -18,7 +18,6 @@ class GejalaResource extends JsonResource
             "id" => $this->id,
             "kode" => $this->kode,
             "nama" => $this->nama,
-            "bobot" => $this->bobot,
         ];
     }
 }

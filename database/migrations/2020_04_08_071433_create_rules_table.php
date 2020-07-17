@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBobotsTable extends Migration
+class CreateRulesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateBobotsTable extends Migration
      */
     public function up()
     {
-        Schema::create('bobots', function (Blueprint $table) {
+        Schema::create('rules', function (Blueprint $table) {
             $table->id();
-            $table->string('keterangan');
-            $table->string('bobotuser');
+            $table->string('penyakit_code');
+            $table->string('gejala_code');
+            $table->double('bobot');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateBobotsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bobots');
+        Schema::dropIfExists('Rules');
     }
 }

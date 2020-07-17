@@ -44,11 +44,13 @@ Route::prefix('v1')->group(function () {
         Route::delete('{gejala}/destroy', 'GejalaController@destroy');
     });
 
-    Route::prefix('bobots')->group(function () {
-        Route::get('', 'BobotController@index')->name('bobots.index');
-        Route::post('create', 'BobotController@store');
-        Route::get('{bobot}', 'BobotController@show')->name('bobots.show');
-        Route::put('{bobot}/update', 'BobotController@update')->name('bobots.update');
-        Route::delete('{bobot}/destroy', 'BobotController@destroy');
+    Route::prefix('rules')->group(function () {
+        Route::get('', 'RuleController@index')->name('rules.index');
+        Route::post('create', 'RuleController@store');
+        Route::get('{rule}', 'RuleController@show')->name('rules.show');
+        Route::put('{rule}/update', 'RuleController@update')->name('rules.update');
+        Route::delete('{rule}/destroy', 'RuleController@destroy');
     });
+
+    Route::post('hasil_diagnosas/create','HasilDiagnosaController@store');
 });
