@@ -12,4 +12,8 @@ class Penyakit extends Model
     use HasApiTokens, Notifiable;
 
     protected $guarded = [];
+
+    public function rules(){
+        return $this->hasMany(Rule::class, 'penyakit_code', 'kode');
+    }
 }

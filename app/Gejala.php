@@ -12,4 +12,12 @@ class Gejala extends Model
     use HasApiTokens, Notifiable;
 
     protected $guarded = [];
+
+    public function rules(){
+        return $this->hasMany(Rule::class, 'gejala_code');
+    }
+
+    public function penyakits(){
+        return $this->hasMany(Penyakit::class, 'penyakit_code');
+    }
 }
